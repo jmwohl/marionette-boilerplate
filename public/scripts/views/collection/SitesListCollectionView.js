@@ -1,18 +1,21 @@
 define([
 	'backbone',
-	'view/item/SitesListItemView'
+	'views/item/SitesListItemView'
 ],
 function( Backbone, SitesListItemView ) {
     'use strict';
 
 	/* Return a ItemView class definition */
 	return Backbone.Marionette.CollectionView.extend({
-
+		el: 'tbody',
+		
 		initialize: function() {
 			console.log("initialize a Siteslistcollectionview CollectionView");
+			this.collection.fetch()
+				.done();
 		},
 		
-		childView: 'SitesListItemView',
+		childView: SitesListItemView,
 
     	/* ui selector cache */
     	ui: {},

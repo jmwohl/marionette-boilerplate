@@ -1,27 +1,37 @@
-define(['backbone', 'handlebars', 'communicator', 'collections/SitesCollection', 'views/item/Map'], function(Backbone, Handlebars, Communicator, SitesCollections, Map) {
-	console.log(Backbone.Marionette);
+define([
+    'backbone', 
+    'handlebars', 
+    'communicator', 
+    'collections/SitesCollection', 
+    'views/item/HeaderView',
+    'views/layout/MainLayoutView'
+], function(
+    Backbone, 
+    Handlebars, 
+    Communicator, 
+    SitesCollections,
+    HeaderView,
+    MainLayoutView
+) {
+    console.log(Backbone.Marionette);
 
     var RevisitAdminApp = new Backbone.Marionette.Application();
 
-	// add our application regions
+    // add our application regions
     RevisitAdminApp.addRegions({
-		header: "#RA_Header", 
-		main: "#RA_Main",
-		footer: "#RA_Footer"
+        header: "#Header",
+        main: "#Main"
     });
 
     // Initialize Views
     RevisitAdminApp.addInitializer(function(options) {
-    	this.facilities = new SitesCollections();
-        // do useful stuff here
-        var map = new Map();
-        RevisitAdminApp.main.show(map);
+        this.header.show(new HeaderView());
+
+        this.main.show(new MainLayoutView());
     });
 
     RevisitAdminApp.addInitializer(function(options) {
-    	this.facilities.fetch().done(function(facilities) {
-    		console.log(facilities);
-    	});
+        
     });
 
     return RevisitAdminApp;

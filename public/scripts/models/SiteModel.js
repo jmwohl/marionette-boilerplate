@@ -10,7 +10,7 @@ function( Backbone ) {
 			console.log("initialize a Sitemodel model");
 		},
 
-		defaults: {},
+		defaults: {}
 
     });
 });
