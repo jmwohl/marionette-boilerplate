@@ -1,6 +1,6 @@
 define([
 	'backbone',
-	'hbs!tmpl/item/SidebarView_tmpl'
+	'text!tmpl/item/SidebarView_tmpl.hbs'
 ],
 function( Backbone, SidebarviewTmpl  ) {
     'use strict';

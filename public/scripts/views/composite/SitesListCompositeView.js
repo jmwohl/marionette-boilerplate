@@ -1,6 +1,6 @@
 define([
 	'backbone',
-	'hbs!tmpl/composite/SitesListCompositeView_tmpl',
+	'text!tmpl/composite/SitesListCompositeView_tmpl.hbs',
 	'views/item/SitesListItemView'
 ],
 function( Backbone, SiteslistcompositeviewTmpl, SitesListItemView  ) {
@@ -16,7 +16,7 @@ function( Backbone, SiteslistcompositeviewTmpl, SitesListItemView  ) {
 		},
 		
     	
-    	template: SiteslistcompositeviewTmpl,
+    	template: _.template(SiteslistcompositeviewTmpl),
     	
 
     	/* ui selector cache */

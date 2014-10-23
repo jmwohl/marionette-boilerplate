@@ -1,35 +1,37 @@
 define([
-	'backbone',
-	'hbs!tmpl/item/SitesListItemView_tmpl'
-],
-function( Backbone, SiteslistitemviewTmpl  ) {
-    'use strict';
+        'backbone',
+        'text!tmpl/item/SitesListItemView_tmpl.hbs'
+    ],
+    function(Backbone, SiteslistitemviewTmpl) {
+        'use strict';
 
-	/* Return a ItemView class definition */
-	return Backbone.Marionette.ItemView.extend({
-		tagName: 'tr',
+        /* Return a ItemView class definition */
+        return Backbone.Marionette.ItemView.extend({
+            tagName: 'tr',
 
-		initialize: function() {
-			console.log("initialize a Siteslistitemview ItemView");
-		},
+            initialize: function() {
+                console.log("initialize a Siteslistitemview ItemView");
+            },
 
-    	template: SiteslistitemviewTmpl,
-        
-    	/* ui selector cache */
-    	ui: {},
+            template: function(serialized_model) {                
+                return _.template(SiteslistitemviewTmpl, serialized_model);
+            },
 
-		/* Ui events hash */
-		events: {
-			'click': 'selectSite'
-		},
+            /* ui selector cache */
+            ui: {},
 
-		/* on render callback */
-		onRender: function() {},
+            /* Ui events hash */
+            events: {
+                'click': 'selectSite'
+            },
 
-		selectSite: function() {
-			console.log('site selected');
-			alert(this.model.get('name'));
-		}
-	});
+            /* on render callback */
+            onRender: function() {},
 
-});
+            selectSite: function() {
+                console.log('site selected');
+                alert(this.model.get('name'));
+            }
+        });
+
+    });

@@ -4,7 +4,9 @@ define(function() {
 	/* return an array of specs to be run */
 	return {
 		specs: ['spec/collections/SitesCollection.js',
+		'spec/controllers/FrontController.js',
 		'spec/models/SiteModel.js',
+		'spec/routers/AppRouter.js',
 		'spec/views/Map.js',
 		'spec/views/collection/SitesListCollectionView.js',
 		'spec/views/collection/SitesListItemView.js',

@@ -1,6 +1,6 @@
 define([
 	'backbone',
-	'hbs!tmpl/item/HeaderView_tmpl'
+	'text!tmpl/item/HeaderView.tpl'
 ],
 function( Backbone, HeaderviewTmpl  ) {
     'use strict';

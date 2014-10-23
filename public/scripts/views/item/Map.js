@@ -1,6 +1,6 @@
 define([
 	'backbone',
-	'hbs!tmpl/item/Map_tmpl'
+	'text!tmpl/item/Map_tmpl.hbs'
 ],
 function( Backbone, MapTmpl  ) {
     'use strict';

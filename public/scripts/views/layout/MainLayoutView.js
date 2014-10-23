@@ -1,6 +1,6 @@
 define([
 	'backbone',
-	'hbs!tmpl/layout/MainLayoutView_tmpl',
+	'text!tmpl/layout/MainLayoutView_tmpl.hbs',
 	'views/item/SidebarView',
 	'views/composite/SitesListCompositeView',
 	'collections/SitesCollection'
